@@ -67,7 +67,7 @@ const questions = [
     }
 ];
 
-// Record the input to the readme. Cant think of a joke.
+// Record the input to the readme. Cant think of a joke. Path is pretty nice though
 function writeToFile(fileName, data) {
     const markdown = generateMarkdown(data);
     fs.writeFile(__filename.base, markdown, function(err) {
@@ -76,8 +76,12 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
-function init() {}
+// Function that actually does the work. All setup for this and the init below it. Godspeed.
+function init() {
+    inquirer.prompt(questions).then(function(data){
+        writeToFile(__filename.base, data);
+    })
+}
 
 // Function call to initialize app
 init();
