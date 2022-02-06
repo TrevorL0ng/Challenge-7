@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
+const path = require("path");
 
 
 // Array of questions for the user to generate the readme with. Much input. Wow.
@@ -66,9 +67,13 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// Record the input to the readme. Cant think of a joke.
 function writeToFile(fileName, data) {
-    
+    const markdown = generateMarkdown(data);
+    fs.writeFile(__filename.base, markdown, function(err) {
+        if (err) throw (err);
+        console.log("Your README has successfully been generated!")
+    });
 }
 
 // TODO: Create a function to initialize app
