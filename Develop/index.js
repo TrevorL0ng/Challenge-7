@@ -39,12 +39,37 @@ const questions = [
     {
         type:"list",
         name:"license",
-        message:"Please enter a title for your Project"
+        message:"Please choose the licensing for your Project",
+        choices:[   
+            "None",
+            "Apache2.0",
+            "Boost Software 1.0",
+            "Creative Commons Zero v1.0 Universal",
+            "Eclipse Public 2.0",
+            "GNU Affero General Public v3.0",
+            "GNU General Public v2.0",
+            "GNU Lesser General Public v2.1",
+            "GNU Public v3.0",
+            "MIT",
+            "Mozilla Public 2.0",
+            "Unilicense"]
     },
+    {
+        type:"input",
+        name:"username",
+        message:"Please enter your Github username"
+    },
+    {
+        type:"input",
+        name:"email",
+        message:"Please enter your email address"
+    }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    
+}
 
 // TODO: Create a function to initialize app
 function init() {}
