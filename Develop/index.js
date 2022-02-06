@@ -1,13 +1,44 @@
+// Required modules. Neat.
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 
-// TODO: Create an array of questions for user input
+// Array of questions for the user to generate the readme with. Much input. Wow.
 const questions = [
     {
         type:"input",
         name:"title",
+        message:"Please enter a title for your project"
+    },
+    {
+        type:"input",
+        name:"description",
+        message:"Please enter a description of your project"
+    },
+    {
+        type:"input",
+        name:"install",
+        message:"Please enter the installation instructions for your project"
+    },
+    {
+        type:"input",
+        name:"usage",
+        message:"Please enter the usage information for your project"
+    },
+    {
+        type:"input",
+        name:"contribute",
+        message:"Please enter any contribution guildelines for your Project"
+    },
+    {
+        type:"input",
+        name:"test",
+        message:"Please enter testing instructions for your Project"
+    },
+    {
+        type:"list",
+        name:"license",
         message:"Please enter a title for your Project"
     },
 ];
