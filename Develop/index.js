@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 const path = require("path");
-
+const readme = "C:\Users\kakas\Documents\GitHub\Challenge-7\Develop\README.md";
 
 // Array of questions for the user to generate the readme with. Much input. Wow.
 const questions = [
@@ -68,9 +68,9 @@ const questions = [
 ];
 
 // Record the input to the readme. Cant think of a joke. Path is pretty nice though
-function writeToFile(fileName, data) {
+function writeToFile(readme, data) {
     const markdown = generateMarkdown(data);
-    fs.writeFile(__filename.base, markdown, function(err) {
+    fs.writeFile(path.basename(readme), markdown, function(err) {
         if (err) throw (err);
         console.log("Your README has successfully been generated!")
     });
@@ -79,7 +79,7 @@ function writeToFile(fileName, data) {
 // Function that actually does the work. All setup for this and the init below it. Godspeed.
 function init() {
     inquirer.prompt(questions).then(function(data){
-        writeToFile(__filename.base, data);
+        writeToFile(path.basename(readme), data);
     })
 }
 
