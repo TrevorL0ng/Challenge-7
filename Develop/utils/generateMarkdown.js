@@ -11,7 +11,25 @@ function generateMarkdown(data) {
       [License](#license)
       [Questions](#reach)
 
-      
+      ##Installation
+      ${data.install}
+
+      ##Usage
+      ${data.usage}
+
+      ##Contributions
+      ${data.contribute}
+
+      ##Tests
+      ${data.test}
+
+      ##License
+      ${data.license}
+
+      ##Questions
+
+      **Github:** ${data.username}
+      **Email:** ${data.email}
 
 `;
 }
